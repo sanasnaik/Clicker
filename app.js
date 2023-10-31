@@ -1,5 +1,5 @@
 function start() {
-    document.getElementById("home").style.display = "none";
+    document.getElementById("text").style.display = "none";
     newCookie();
 }
 

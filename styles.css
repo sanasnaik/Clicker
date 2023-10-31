@@ -1,6 +1,6 @@
-body {
-    text-align: center;
+#text {
     font-family: sans-serif;
+    text-align: center;
 }
 h1 {
     margin-top: 150px;
@@ -12,9 +12,10 @@ button {
     background-color: white;
     font-size: 15px;
     padding: 5px 10px;
-    text-align: center;
 }
 img {
     width: 10%;
     height: auto;
+    top: 300;
+    left: 100;
 }
