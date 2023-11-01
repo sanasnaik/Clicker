@@ -13,9 +13,7 @@ button {
     font-size: 15px;
     padding: 5px 10px;
 }
-img {
-    width: 10%;
-    height: auto;
-    top: 300;
-    left: 100;
+#cookie {
+    width: 50px;
+    position: relative;
 }

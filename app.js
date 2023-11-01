@@ -4,11 +4,15 @@ function start() {
 }
 
 function newCookie() {
-    let image = document.createElement("img");
+    const image = document.createElement("img");
     image.src = "download.png";
-    document.getElementById("main").appendChild(image); 
-}
+    image.id = "cookie";
 
-function cookieClicked() {
+    const x = Math.floor(Math.random()*window.innerWidth) - 50;
+    const y = Math.floor(Math.random()*window.innerHeight) - image.height;
 
+    image.style.left = x+"px"; 
+    image.style.top = y+"px";
+
+    document.getElementById("main").appendChild(image);
 }
