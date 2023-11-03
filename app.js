@@ -1,5 +1,8 @@
+let count = 0;
+
 function start() {
     document.getElementById("text").style.display = "none";
+    setTimeout(end, 3000);
     newCookie();
 }
 
@@ -8,11 +11,43 @@ function newCookie() {
     image.src = "download.png";
     image.id = "cookie";
 
-    const x = Math.floor(Math.random()*window.innerWidth) - 50;
-    const y = Math.floor(Math.random()*window.innerHeight) - image.height;
+    let x = Math.floor(Math.random()*window.innerWidth);
+    let y = Math.floor(Math.random()*window.innerHeight);
 
-    image.style.left = x+"px"; 
-    image.style.top = y+"px";
+    if (x > window.innerWidth - 50) {
+        x = window.innerWidth - 50;
+    }
+    if (y > window.innerHeight-image.height) {
+        y = window.innerHeight-image.height;
+    }
+    
+    image.style.left = x + "px";
+    image.style.top = y + "px";
 
     document.getElementById("main").appendChild(image);
+    document.getElementById("cookie").onclick = function() {changePos()};
+}
+
+function changePos() {
+    count++;
+    
+    let x = Math.floor(Math.random()*window.innerWidth);
+    let y = Math.floor(Math.random()*window.innerHeight);
+
+    if (x > window.innerWidth-50) {
+        x = window.innerWidth - 50;
+    }
+    if (y > window.innerHeight-document.getElementById("cookie").height) {
+        y = window.innerHeight-document.getElementById("cookie").height;
+    }
+
+    document.getElementById("cookie").style.left = x + "px";
+    document.getElementById("cookie").style.top = y + "px";
+}
+
+function end() {
+    document.getElementById("cookie").style.display = "none";
+    const congrats = document.createElement("p");
+    congrats = "Congratulations! Your score is: " + count;
+    document.getElementById("main").appendChild(congrats);
 }
