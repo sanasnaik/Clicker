@@ -46,8 +46,5 @@ function changePos() {
 }
 
 function end() {
-    document.getElementById("cookie").style.display = "none";
-    const congrats = document.createElement("p");
-    congrats = "Congratulations! Your score is: " + count;
-    document.getElementById("main").appendChild(congrats);
+    document.write("Congratulations! Your score is: " + count);
 }
