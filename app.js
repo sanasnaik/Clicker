@@ -11,13 +11,11 @@ function start() {
 
 function updateTime() {
     time--;
-    if (time >= 0) {
-        document.getElementById("counter").innerHTML = time;
-    }
-    else {
+    if (time < 0) {
         clearInterval(timeInt);
         end();
     }
+    document.getElementById("counter").innerHTML = time;
 }
 
 function newCookie() {
@@ -62,6 +60,7 @@ function changePos() {
 function end() {
     document.getElementById("cookie").style.visibility = "hidden";
     document.getElementById("counter").innerHTML = "Your score is: " + count;
+    
     document.getElementById("startButton").innerHTML = "Play Again?";
     document.getElementById("startButton").onclick = function() {location.replace("index.html")};
     document.getElementById("startButton").style.visibility = "visible";
