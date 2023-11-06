@@ -1,9 +1,23 @@
 let count = 0;
+let time = 10;
+let timeInt;
 
 function start() {
-    document.getElementById("text").style.display = "none";
-    setTimeout(end, 3000);
+    document.getElementById("para").style.visibility = "hidden";
+    document.getElementById("counter").innerHTML = time;
+    timeInt = setInterval(updateTime, 1000)
     newCookie();
+}
+
+function updateTime() {
+    time--;
+    if (time >= 0) {
+        document.getElementById("counter").innerHTML = time;
+    }
+    else {
+        clearInterval(timeInt);
+        end();
+    }
 }
 
 function newCookie() {
@@ -46,6 +60,9 @@ function changePos() {
 }
 
 function end() {
-    location.assign("endgame.html");
-    document.getElementById("showScore").innerHTML = "Your score is: " + count;
+    document.getElementById("cookie").style.visibility = "hidden";
+    document.getElementById("counter").innerHTML = "Your score is: " + count;
+    document.getElementById("startButton").innerHTML = "Play Again?";
+    document.getElementById("startButton").onclick = function() {location.replace("index.html")};
+    document.getElementById("startButton").style.visibility = "visible";
 }
