@@ -46,5 +46,6 @@ function changePos() {
 }
 
 function end() {
-    document.write("Congratulations! Your score is: " + count);
+    location.assign("endgame.html");
+    document.getElementById("showScore").innerHTML = "Your score is: " + count;
 }
