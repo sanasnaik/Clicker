@@ -11,11 +11,11 @@ function start() {
 
 function updateTime() {
     time--;
+    document.getElementById("counter").innerHTML = time;
     if (time < 0) {
         clearInterval(timeInt);
         end();
     }
-    document.getElementById("counter").innerHTML = time;
 }
 
 function newCookie() {
